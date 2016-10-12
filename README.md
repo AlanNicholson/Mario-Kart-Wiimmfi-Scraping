@@ -3,9 +3,9 @@ Data from the Wiimmfe Mario Kart Servers
   
 Searches Wiimmfe MKW server for friends and alerts when they join.  
 Searches for player name and returns Friend-Code.  
-Creates dictionary of players currently online with Friend-Codes as keys.  
--uncomment print(mkDic) 
-It can grab all data available from https://wiimmfi.de/mkw  
+Creates dictionary of players currently online with Friend-Codes as keys.    
+-uncomment print(mkDic)   
+It can grab all data available from https://wiimmfi.de/mkw    
  could be handy...  
 
 
