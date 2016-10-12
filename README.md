@@ -10,6 +10,10 @@ It can grab all data available from https://wiimmfi.de/mkw
 
 
 # Use  
+- Install dependencies  
+`pip install tkinter`  
+`pip install BeautifulSoup4`  
+
 - Enter player name. (Only to search non-friend player) (copy/paste weird character names)  
 Leave blank and wiiSc will just search and alert friends.   
 
