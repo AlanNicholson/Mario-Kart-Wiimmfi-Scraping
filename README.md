@@ -9,10 +9,11 @@ data could be handy...
 Ideas?  
 
 # Use  
-Enter player name. (Only to search non-friend player) (copy/paste weird character names)  
-- Leave blank and wiiSc will just search and alert friends.   
-Enter how often to check server.  
-- Don't troll server. 30 Should be fine.   
+- Enter player name. (Only to search non-friend player) (copy/paste weird character names)  
+Leave blank and wiiSc will just search and alert friends.   
+
+- Enter how often to check server.  
+Don't troll server. 30 Should be fine.   
   
 An alert will pop-up when a friend joins. (usually 45 mins after they said they would)  
 wiiSc closes.  
