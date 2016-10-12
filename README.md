@@ -1,4 +1,6 @@
 # Mario-Kart-Wiimmfe-Scraping
+##wiiSc  
+Written in Python 3.5.2  
 Data from the Wiimmfe Mario Kart Servers  
   
 Searches Wiimmfe MKW server for friends and alerts when they join.  
