@@ -1,9 +1,9 @@
-# Mario-Kart-Wiimmfe-Scraping
+# Mario-Kart-Wiimmfi-Scraping
 ##wiiSc  
 Written in Python 3.5.2  
-Data from the Wiimmfe Mario Kart Servers  
+Data from the Wiimmfi Mario Kart Servers  
   
-Searches Wiimmfe MKW server for friends and alerts when they join.  
+Searches Wiimmfi MKW server for friends and alerts when they join.  
 Searches for player name and returns Friend-Code.  
 Creates a list of players currently online with Friend-Codes and points.      
   
