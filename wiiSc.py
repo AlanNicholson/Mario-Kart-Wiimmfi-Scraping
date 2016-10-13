@@ -53,6 +53,7 @@ while 0==0:
     fcounter=int(0)
     pcounter=int(0)
     scounter=int(0)
+    dcounter=int(0)
     for key, value in mkDic.items():
         if fcounter == 0:
             if key == '2922-2443-6911': #2922-2443-6911 - fartface
@@ -66,9 +67,10 @@ while 0==0:
             if key == '5284-6991-7807': #5284-6991-7807 - Sean
                 messagebox.showinfo("Friend Found!","It's "+value)
                 scounter=+1
-        #elif key == '3526-1167-6604': #3526-1167-6604 - Δ¡ckΓ◎τ
-        #    messagebox.showinfo("Friend Found!","It's "+value)
-        #    counter=+1 
+        if dcounter == 0:
+            if key == '3526-1167-6604': #3526-1167-6604 - Δ¡ckΓ◎τ
+                messagebox.showinfo("Friend Found!","It's "+value)
+                dcounter=+1 
         else:
             pass   
     if p != '':
