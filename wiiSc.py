@@ -9,6 +9,10 @@ import sys
 urlMK = 'https://wiimmfi.de/mkw'
 p = input('Enter Player: ')
 t = input('How often will I check? ')
+fcounter=int(0)
+pcounter=int(0)
+scounter=int(0)
+dcounter=int(0)
 while 0==0:
     r = requests.get(urlMK)
     soup = BeautifulSoup(r.content, "lxml")
@@ -50,10 +54,6 @@ while 0==0:
     mkDic = dict(zip(fCodes,names))
     mkList = list(zip(fCodes,names,points))
     #print(mkDic)
-    fcounter=int(0)
-    pcounter=int(0)
-    scounter=int(0)
-    dcounter=int(0)
     for key, value in mkDic.items():
         if fcounter == 0:
             if key == '2922-2443-6911': #2922-2443-6911 - fartface
