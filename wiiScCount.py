@@ -8,6 +8,8 @@ urlMK = 'https://wiimmfi.de/mkw'
 global mkVsCount
 root = Tk()
 root.title("Online Players")
+root.geometry('75x75')
+root["bg"] = "black"
 
 def mkCount():
     r = requests.get(urlMK)
@@ -28,7 +30,7 @@ def mkCount():
     pCount.configure(text = mkVsCount)
     root.after(5000,mkCount) # ReRegistered Callback inside Itself
 
-pCount = Label(root, font = "Helvetica 44 bold",width='6')
+pCount = Label(root, font = "Monaco 55 bold",width='6')
 pCount.pack()
 root.after(5000,mkCount)
 root.mainloop()
