@@ -6,9 +6,8 @@ from tkinter import *
 
 urlMK = 'https://wiimmfi.de/mkw'
 global mkVsCount
-root = Tk()
-root.title("Online Players")
-root.geometry('75x75')
+global mkRCount
+
 
 
 def mkCount():
@@ -24,13 +23,23 @@ def mkCount():
         except:
             pass
         
-    region = [r for r in region if r != 'region']  
+    region = [r for r in region if r != 'region']
+    mkRCount = len([a for a in region if 'room' in a]) # Roomies
     mkVsCount = len([a for a in region if 'room' not in a]) # Only WW and Cont
-    #print(mkVsCount)
+    mkDiff = str(mkVsCount)+'/'+str(mkRCount)
+    print(mkDiff)
     pCount.configure(text = mkVsCount,font = "Helvetica 55 bold",)
     root.after(5000,mkCount) # ReRegistered Callback inside Itself
 
-pCount = Label(root, text = '●～*', font = "Helvetica 45 bold",width='6')
-pCount.pack()
-root.after(1000,mkCount)
-root.mainloop()
+def TK():
+    global pCount
+    global root
+    root = Tk()
+    root.title("Online Players")
+    root.geometry('75x75')
+    pCount = Label(root, text = '●～*', font = "Helvetica 45 bold",width='6')
+    pCount.pack()
+    root.after(1000,mkCount)
+    root.mainloop()
+
+TK()
