@@ -52,6 +52,7 @@ def mkCount():
         PNL.append(snapshot)
         print(snapshot)
 
-        T = random.randint(30, 40)
+        T = random.randint(890, 910)
         time.sleep(T)
+
 mkCount()
