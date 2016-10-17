@@ -19,7 +19,7 @@ xAx = list(range(0, len(df['Time'])))
 plt.xticks(xAx, df['Time'])
 plt.plot(df['Vs. Players'], color = 'red')
 plt.plot(df['Room Players'], color = 'blue')
-plt.legend()
+plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
 
 plt.axis('auto')
 plt.show()
