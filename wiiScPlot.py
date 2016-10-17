@@ -17,8 +17,9 @@ pd.DataFrame.plot(df)
 
 xAx = list(range(0, len(df['Time'])))
 plt.xticks(xAx, df['Time'])
-plt.plot(df['Vs. Players'])
-plt.plot(df['Room Players'])
+plt.plot(df['Vs. Players'], color = 'red')
+plt.plot(df['Room Players'], color = 'blue')
+plt.legend()
 
 plt.axis('auto')
 plt.show()
