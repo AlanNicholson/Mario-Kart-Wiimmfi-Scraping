@@ -12,7 +12,7 @@ PNL = []
 format = "%H:%M:%S %a %d %b"
 
 def openCSV():
-    with open('Wiimmfi_Numbers.csv', 'w', encoding='utf-8') as WN:
+    with open('Wiimmfi_Numbers.csv', 'w', encoding='utf-8', newline='') as WN:
         w = csv.writer(WN, dialect='excel')
         header = ['Vs. Players', 'Room Players', 'Time']
         w.writerow(header)
@@ -46,13 +46,13 @@ def mkCount():
         Now = now.strftime(format)
         snapshot = [mkVsCount,mkRCount,Now]
 
-        with open('Wiimmfi_Numbers.csv', 'a', encoding='utf-8') as WN:
+        with open('Wiimmfi_Numbers.csv', 'a', encoding='utf-8', newline='') as WN:
             w = csv.writer(WN, dialect='excel')
             w.writerow(snapshot)
         PNL.append(snapshot)
         print(snapshot)
 
         T = random.randint(890, 910)
-        time.sleep(T)
+        time.sleep(5)
 
 mkCount()
