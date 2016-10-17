@@ -8,7 +8,7 @@ fig = plt.figure()
 rect = fig.patch
 rect.set_facecolor('white')
 
-df = pd.read_csv('Wiimmfi_Numbers.15.16.Oct(Formatted).csv')
+df = pd.read_csv('Wiimmfi_Numbers.csv')
 
 graph1 = fig.add_subplot(1, 1, 1, axisbg='white')
 
