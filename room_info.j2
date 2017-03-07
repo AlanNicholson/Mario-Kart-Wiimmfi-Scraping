@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+<title>Room Info</title>
+
+<meta http-equiv="refresh" content="5">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style>
+ body { font-family:'Open Sans', sans-serif;}
+ table, th, td {border: 1px solid black; text-align:center}
+ th {padding:2px 5px 2px 5px;}
+ tr:nth-child(even) {background-color: #f2f6fc}
+ a:link, a:visited, a:hover, a:active {text-decoration: none; color:black}
+ .name {color:blue}
+ .points {color:brown; font-weight:bold}
+ .header {color:yellow;background:blue}
+</style>
+</head>
+<body>
+<table>
+<th colspan="5" class=header>{{ room_top_text }}</th>
+<tr><th>Name</th><th>Conn_Fails</th><th>Region</th><th>Role</th><th>Points</th></tr>
+{% for key, value in main_dict.items() %}
+
+   <tr>
+        <th class=name> {{ value[0] }} </th>
+        <td> {{ value[1] }} </td>
+        <td> {{ value[2] }} </td>
+        <td> {{ value[3] }} </td>
+        <td class=points> {{ value[4] }} </td>
+
+   </tr>
+{% endfor %}
+</table>
+</body>
+<script><!--
+function timedRefresh(timeoutPeriod) {
+	setTimeout("location.reload(true);",timeoutPeriod);
+}
+
+window.onload = timedRefresh(5333);
+
+//   -->
+</script>
+</html>
