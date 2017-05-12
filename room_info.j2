@@ -2,30 +2,104 @@
 
 <head>
 
-<title>Room Info</title>
-
+<title>_Room Info</title>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
 <meta http-equiv="refresh" content="5">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <style>
  body { font-family:'Open Sans', sans-serif;}
- table, th, td {border: 1px solid black; text-align:center}
- th {padding:2px 5px 2px 5px;}
- tr:nth-child(even) {background-color: #f2f6fc}
- a:link, a:visited, a:hover, a:active {text-decoration: none; color:black}
- .name {color:blue}
+ table, th, td{text-align:center;}
+ th {padding:2px 0px 2px 5px;border-radius:3px;box-shadow: 2px 2px 1px #888888;}
+ td {border: 1px solid #f2f6fc;border-radius:5px;box-shadow: 1px 1px 1px #888888;}
+ tr:nth-child(even) {background-color: #f2f6fc;}
+ a:link, a:visited, a:hover, a:active {text-decoration: none; color:blue;display:block}
+ .room_top_text {color:yellow;background:blue;font-size:12;border:none;text-shadow: 1px 1px 2px navy;}
+ .name {color:blue;}
  .points {color:brown; font-weight:bold}
- .header {color:yellow;background:blue}
+ #headers {font-weight:bold;margin-bottom:10px;padding-right:5px}
+ #main_table {float:left;border:none;}
+ #room_no {margin:4px 0px 0px 4px;border-radius:50px; font-size:36;line-height:49px;float:left; font-weight:bold;
+            border: 1px solid yellow;padding: 8px;color:blue;background:yellow; text-align:center;
+            width:50px;height:50px;padding-right:none;box-shadow: 4px 4px 2px #888888;
+            }
+
+ #viewers {border-radius:20px; font-size:18;line-height:20px; color:yellow; background:blue; float:left;
+            font-weight:bold; border: 1px solid blue;padding: 2px; text-align:center;
+            width:20px;height:20px;box-shadow: 3px 3px 1.5px #888888;
+            }
+a.tooltip {
+    outline: none;
+    text-decoration: none;
+    position: relative;
+}
+
+a.tooltip strong {
+    line-height: 30px;
+}
+
+a.tooltip > span {
+
+    padding: 1px 2px;
+    margin-top: 0px;
+    margin-left: -10px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px #888888;
+    -webkit-transition-property: opacity, margin-top, visibility, margin-left;
+    -webkit-transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+    transition-property: opacity, margin-top, visibility, margin-left;
+    transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+    transition-timing-function:
+    ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+
+
+}
+
+/*a.tooltip > span:hover,*/
+a.tooltip:hover > span {
+    opacity:0.9;
+    color: blue;
+    text-decoration: none;
+    visibility: visible;
+    overflow: visible;
+    margin-top: 0px;
+    display: inline;
+    margin-left: 8px;
+    background: yellow;
+}
+
+
+}
+
+a.tooltip > span {
+
+	background: yellow;
+	background: -webkit-linear-gradient(top, yellow, #FFFFFF);
+	background: linear-gradient(top, yellow, #FFFFFF);
+	border: 1px solid #FFFFFF;
+	opacity:1;
+}
+
+
 </style>
 </head>
 <body>
-<table>
-<th colspan="5" class=header>{{ room_top_text }}</th>
-<tr><th>Name</th><th>Conn_Fails</th><th>Region</th><th>Role</th><th>Points</th></tr>
+<div id = main_table><table>
+<th colspan="5" class=room_top_text>{{ room_top_text }}</th>
+<tr id=headers><th>Name</th><th>Conn_Fails</th><th>Region</th><th>Role</th><th>Points</th></tr>
 {% for key, value in main_dict.items() %}
 
    <tr>
-        <th class=name> {{ value[0] }} </th>
+        <th class=name><a href=# class="tooltip"> {{ value[0] }} <span>{{ key }}</span></a></th>
         <td> {{ value[1] }} </td>
         <td> {{ value[2] }} </td>
         <td> {{ value[3] }} </td>
@@ -34,6 +108,8 @@
    </tr>
 {% endfor %}
 </table>
+</div>
+<div id=room_no title="Number Playing">{{ room_size }}</div><div id=viewers title="Number Viewing">{{ viewers }}</div>
 </body>
 <script><!--
 function timedRefresh(timeoutPeriod) {
